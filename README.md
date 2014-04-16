@@ -3,7 +3,7 @@ sng
 
 Symfony Angular Bridge
 
-This Bundle is in *very* aerly stage of predevelopment. Don't even look at it for now...
+This Bundle is in *very* early stage of predevelopment. Don't even look at it for now...
 
 Features:
 
