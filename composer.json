@@ -1,0 +1,32 @@
+{
+    "name": "studioartlan/sng",
+    "description": "Symfony Angular bridge",
+    "keywords": [],
+    "type": "symfony-bundle",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Marko Žmak",
+            "email": "xmak@studioartlan.com"
+        }
+    ],
+    "require": {
+        "symfony/framework-bundle": "~2.2",
+        "symfony/console": "~2.0"
+    },
+    "require-dev": {
+        "symfony/doctrine-bridge": "~2.2",
+        "doctrine/orm": "~2.2,>=2.2.3",
+        "twig/twig": "~1.11"
+    },
+    "autoload": {
+       
+    },
+    "target-dir": "StudioArtlan/SngBundle",
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.3.x-dev"
+        }
+    }
+}
