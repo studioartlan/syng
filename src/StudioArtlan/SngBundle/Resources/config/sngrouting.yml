@@ -1,0 +1,9 @@
+routing-types:
+  ui-router:
+    name: AngularUI Router
+    url: https://github.com/angular-ui/ui-router
+
+  ng-route:
+    name: AngularJS builtin router
+    url: http://docs.angularjs.org/api/ngRoute/service/$route
+
