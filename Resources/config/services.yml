@@ -1,0 +1,8 @@
+services:
+    studioartlan.twig.sng_extension:
+        class: StudioArtlan\SngBundle\Twig\SngExtension
+        tags: [{ name: twig.extension }]
+
+    studioartlan.sng_config:
+        class: StudioArtlan\SngBundle\Services\SngConfig
+        arguments: ["@kernel"]
