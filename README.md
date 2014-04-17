@@ -8,3 +8,7 @@ This Bundle is in *very* early stage of predevelopment. Don't even look at it fo
 Features:
 
 - automatic Angular route generation by maping Symfony routes to Angular routes
+
+Demo:
+
+https://github.com/studioartlan/sngdemo
