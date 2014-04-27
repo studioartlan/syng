@@ -1,17 +1,17 @@
 <?php
 
-namespace StudioArtlan\SngBundle\Services;
+namespace StudioArtlan\SyngBundle\Services;
 
 use StudioArtlan\CommonLibsBundle\Services\ConfigUtils;
 
-class SngConfig {
+class SyngConfig {
 
 	var $globalConfig;
 	
 	public function __construct(\AppKernel $kernel)
 	{
 		$this->kernel = $kernel;
-		$this->globalConfig = $this->kernel->getContainer()->get('studioartlan.config_utils')->yamlParse('sng.yml');
+		$this->globalConfig = $this->kernel->getContainer()->get('studioartlan.config_utils')->yamlParse('syng.yml');
 	}
 
 	public function getNgAppConfig()

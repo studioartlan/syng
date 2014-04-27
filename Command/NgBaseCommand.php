@@ -1,6 +1,6 @@
 <?php
 
-namespace StudioArtlan\SngBundle\Command;
+namespace StudioArtlan\SyngBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -14,7 +14,7 @@ use Symfony\Component\Yaml\Yaml;
 
 use StudioArtlan\CommonLibsBundle\Services\FileUtils;
 use StudioArtlan\CommonLibsBundle\Services\ConfigUtils;
-use StudioArtlan\SngBundle\Services\SngConfig;
+use StudioArtlan\SyngBundle\Services\SyngConfig;
 
 class NgBaseCommand extends ContainerAwareCommand
 {
@@ -36,19 +36,19 @@ class NgBaseCommand extends ContainerAwareCommand
 	const SUBFOLDER_IMG = 'img';
 	const SUBFOLDER_CSS = 'css';
 	
-	const ROUTES_FILE = 'routes/sngroutes.js';
+	const ROUTES_FILE = 'routes/syngroutes.js';
 
 	const TEMPLATES_FOLDER = 'views';
 	const TEMPLATES_EXTENSION = '.html';
 	
 	var $routingType;
 	var $targetBundle;
-	var $sngConfig;
+	var $syngConfig;
 
     protected function configure()
     {
         $this
-            ->setName('sng:generate:ngroutes')
+            ->setName('syng:generate:ngroutes')
             ->setDescription('Generates Angular routes from Symfony controllers')
             ->addArgument('bundle', InputArgument::OPTIONAL, 'Bundle in which to generate the routing')
 			->addArgument('routing-type', InputArgument::OPTIONAL, 'Routing type to use')
@@ -77,7 +77,7 @@ class NgBaseCommand extends ContainerAwareCommand
 		if (!$outputFileName)
 			$outputFileName = "$renderTemplate";
 
-		$templatePath = "StudioArtlanSngBundle:Skeleton:$renderTemplate.$templatingEnine";
+		$templatePath = "StudioArtlanSyngBundle:Skeleton:$renderTemplate.$templatingEnine";
 		$outputContent = $this->getContainer()->get('templating')->render($templatePath, $variables);
 		$outputFilePath = $this->getTargetBundleFilePath($outputFolder, $outputFileName);
 		$this->output->writeln("Generating file: $templatePath -> $outputFilePath");
@@ -104,12 +104,12 @@ class NgBaseCommand extends ContainerAwareCommand
 
 	protected function parseConfig()
 	{
-		$this->sngLocalConfig = $this->getContainer()->get('studioartlan.config_utils')->yamlParse('@StudioArtlanSngBundle/Resources/config/sng.yml');
+		$this->syngLocalConfig = $this->getContainer()->get('studioartlan.config_utils')->yamlParse('@StudioArtlanSyngBundle/Resources/config/syng.yml');
 	}
 	
-	public function getSngConfig()
+	public function getSyngConfig()
 	{
-		return $this->getContainer()->get('studioartlan.sng_config');
+		return $this->getContainer()->get('studioartlan.syng_config');
 	}
 	
 	protected function getTargetBundleFilePath()
@@ -119,7 +119,7 @@ class NgBaseCommand extends ContainerAwareCommand
 
 	protected function getBundleFilePath()
 	{
-		return $this->getFilePath(FileUtils::concatPath('StudioArtlanSngBundle', self::FOLDER_SOURCE_BASE_ASSETS ), func_get_args());
+		return $this->getFilePath(FileUtils::concatPath('StudioArtlanSyngBundle', self::FOLDER_SOURCE_BASE_ASSETS ), func_get_args());
 	}
 
 	private function getFilePath($bundlePrefix, $pathParts)

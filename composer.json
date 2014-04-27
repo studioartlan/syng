@@ -1,5 +1,5 @@
 {
-    "name": "studioartlan/sng",
+    "name": "studioartlan/syng",
     "description": "Symfony Angular bridge",
     "keywords": [],
     "type": "symfony-bundle",
@@ -21,7 +21,7 @@
     "autoload": {
        
     },
-    "target-dir": "StudioArtlan/SngBundle",
+    "target-dir": "StudioArtlan/SyngBundle",
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {

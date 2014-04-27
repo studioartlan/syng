@@ -1,4 +1,4 @@
-sng
+syng
 ===
 
 Symfony Angular Bridge
@@ -12,4 +12,4 @@ Features:
 
 Demo:
 
-https://github.com/studioartlan/sngdemo
+https://github.com/studioartlan/syngdemo

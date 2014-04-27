@@ -1,12 +1,12 @@
 <?php
 
-namespace StudioArtlan\SngBundle\Twig;
+namespace StudioArtlan\SyngBundle\Twig;
 
-use StudioArtlan\SngBundle\Services\SngConfig;
+use StudioArtlan\SyngBundle\Services\SyngConfig;
 
-class SngExtension extends \Twig_Extension
+class SyngExtension extends \Twig_Extension
 {
-	var $sngConfig;
+	var $syngConfig;
 	
     public function getFilters()
     {
@@ -22,6 +22,6 @@ class SngExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'sng_extension';
+        return 'syng_extension';
     }
 }

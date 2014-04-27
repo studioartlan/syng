@@ -1,6 +1,6 @@
 <?php
 
-namespace StudioArtlan\SngBundle\Command;
+namespace StudioArtlan\SyngBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -25,7 +25,7 @@ class NgRoutesCommand extends NgBaseCommand
     protected function configure()
     {
         $this
-            ->setName('sng:generate:ngroutes')
+            ->setName('syng:generate:ngroutes')
             ->setDescription('Generates Angular routes from Symfony controllers')
             ->addArgument('bundle', InputArgument::OPTIONAL, 'Bundle in which to generate the routing')
 			->addArgument('routing-type', InputArgument::OPTIONAL, 'Routing type to use')
@@ -70,15 +70,15 @@ class NgRoutesCommand extends NgBaseCommand
 
 		$this->renderTargetBundleFile(
 			"Routing/$renderTemplate.js",
-			array('routes' => $routes, 'appConfig' => $this->getSngConfig()->getNgAppConfig()),
+			array('routes' => $routes, 'appConfig' => $this->getSyngConfig()->getNgAppConfig()),
 			FileUtils::concatPath(self::SUBFOLDER_APP, self::SUBFOLDER_JS),
 			self::ROUTES_FILE,
 			true
 		);
 
 		$this->renderTargetBundleFile(
-			"app/js/controllers/sngcontrollers.js",
-			array('routes' => $routes, 'appConfig' => $this->getSngConfig()->getNgAppConfig()),
+			"app/js/controllers/syngcontrollers.js",
+			array('routes' => $routes, 'appConfig' => $this->getSyngConfig()->getNgAppConfig()),
 			null,
 			null,
 			true
@@ -142,7 +142,7 @@ class NgRoutesCommand extends NgBaseCommand
 
 	public function getRoutingTypes()
 	{
-		return $this->sngLocalConfig['routing-types'];
+		return $this->syngLocalConfig['routing-types'];
 	}
 	
 

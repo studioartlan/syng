@@ -1,6 +1,6 @@
 <?php
 
-namespace StudioArtlan\SngBundle\Command;
+namespace StudioArtlan\SyngBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -23,7 +23,7 @@ class NgSkeletonCommand extends NgBaseCommand
     protected function configure()
     {
         $this
-            ->setName('sng:generate:skeleton')
+            ->setName('syng:generate:skeleton')
             ->setDescription('Generates AngularJS App skeleton')
             ->addArgument('bundle', InputArgument::OPTIONAL, 'Bundle in which to generate the routing')
         ;
@@ -49,11 +49,11 @@ class NgSkeletonCommand extends NgBaseCommand
 		
 		$this->renderTargetBundleFile(
 			'app/js/app.js',
-			array('appConfig' => $this->getSngConfig()->getNgAppConfig())
+			array('appConfig' => $this->getSyngConfig()->getNgAppConfig())
 		);
 		$this->renderTargetBundleFile(
 			'app/index.html',
-			array('appConfig' => $this->getSngConfig()->getNgAppConfig())
+			array('appConfig' => $this->getSyngConfig()->getNgAppConfig())
 		);
 
 		

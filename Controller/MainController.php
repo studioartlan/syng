@@ -1,6 +1,6 @@
 <?php
 
-namespace StudioArtlan\SngBundle\Controller;
+namespace StudioArtlan\SyngBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -18,7 +18,7 @@ class MainController extends Controller
      */
     public function indexAction()
     {
-    	return array( 'ngAppConfig' => $this->get('studioartlan.sng_config')->getNgAppConfig() );
+    	return array( 'ngAppConfig' => $this->get('studioartlan.syng_config')->getNgAppConfig() );
     }
 
 }
